@@ -128,7 +128,7 @@ volumes:
 - Xem IP Ubuntu: ```ip a```
 <img width="1017" height="536" alt="1" src="https://github.com/user-attachments/assets/4af0d280-4bfb-4132-a066-ed9ebd13c8ba" />
 
-- Mở trình duyệt, truy cập: http://192.168.91.154:8082
+- Mở trình duyệt, truy cập: http://192.168.91.154:8082/
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/26a0772e-4b14-4391-b281-8e2e61783be0" />
 
 - Chọn ngôn ngữ: Tiếng Việt -> Tiếp tục
