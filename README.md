@@ -141,6 +141,9 @@ volumes:
 👉 Nhấn Cài đặt Wordpress
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a8ef0db2-130f-428e-85cc-e76d5e61ef36" />
 
+- Cài đặt thành công
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/68e67493-a3db-4e43-9445-14fd437eaeff" />
+
 - Đăng nhập vào WordPress
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/5f7575f9-c422-41f0-b107-6f44ab39c68f" />
 
