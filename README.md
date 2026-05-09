@@ -150,6 +150,31 @@ volumes:
 - Giao diện WordPress
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/fdee5474-358c-4355-8444-5cd042f5de19" />
 
+👉 Tạo bài viết 1: Giới thiệu bản thân
+- Tạo nội dung: Chọn menu Bài viết (Posts) -> Thêm bài viết -> Xuất bản
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/514e8be1-b538-480d-8e5f-4dd6e788945d" />
+
+<img width="1536" height="960" alt="w" src="https://github.com/user-attachments/assets/fd99bb3e-cae1-42ad-baaf-28d97825a727" />
+
+- Kết quả: http://192.168.91.154:8082/?p=9
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/711aaa1b-9148-4fce-928b-aaae3bb4f44c" />
+
+👉 Tạo bài viết 2 — Giới thiệu ngành học
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8486114e-8fa6-4123-a3c4-fe258fb78067" />
+
+- Kết quả: http://192.168.91.154:8082/?p=12
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/749994ab-f8df-4d92-9c2d-6070d49b5963" />
+
+- Sửa giao diện
+  + Chọn giao diện -> sửa giao diện
+<img width="1920" height="1200" alt="d" src="https://github.com/user-attachments/assets/1c59d38d-084b-4f0c-8674-34119322ca63" />
+
+- Chỉnh sửa giao diện
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b7015ff7-81d5-4535-a74d-60b5811a63e4" />
+
+- Kết quả sau khi chỉnh sửa: http://192.168.91.154:8082
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/2b6c3745-e072-43d7-9284-6052dc386432" />
+
 ## 7. Kiểm tra PHPAdmin
 - Mở trình duyệt, truy cập: http://192.168.91.154:8081/
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/16e2da47-a91e-402c-8c94-94c8a2b5c19e" />
