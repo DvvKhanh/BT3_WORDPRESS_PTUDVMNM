@@ -156,7 +156,7 @@ volumes:
 
 <img width="1536" height="960" alt="w" src="https://github.com/user-attachments/assets/fd99bb3e-cae1-42ad-baaf-28d97825a727" />
 
-- Kết quả: http://192.168.91.154:8082/?p=9
+- Kết quả: http://192.168.91.154:8082/?p=7
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/711aaa1b-9148-4fce-928b-aaae3bb4f44c" />
 
 👉 Tạo bài viết 2 — Giới thiệu ngành học
