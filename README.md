@@ -241,4 +241,115 @@ ingress:
 <img width="1536" height="960" alt="e" src="https://github.com/user-attachments/assets/8911f7c4-57cf-49ec-9590-37b15f35d3d1" />
 
 ### Chạy Tunnel
-- Chạy tunnel: cloudflared tunnel --config ~/.cloudflared/config-bai3.yml run wordpress
+- Chạy tunnel: ```cloudflared tunnel --config ~/.cloudflared/config-bai3.yml run wordpress```
+<img width="1476" height="755" alt="image" src="https://github.com/user-attachments/assets/828edf26-353d-4df2-8a7f-41275bceae52" />
+
+- Lưu ý:
++ Không được tắt Terminal.
++ Nếu tắt -> Web sẽ off
+
+ ## 9. Truy cập website
+ - Truy cập: https://wordpress.khanh123.id.vn
+ - Bài viết giới thiệu bản thân
+<img width="1918" height="1148" alt="image" src="https://github.com/user-attachments/assets/b1a9e5cb-76d5-4d9a-a0c0-95690705a8f4" />
+
+ - Bài viết giới thiệu ngành học yêu thích
+<img width="1918" height="1151" alt="image" src="https://github.com/user-attachments/assets/aa14f90e-4bb5-4d69-996c-23ee1aef3edc" />
+
+ ## 10. Nhận xét
+ WordPress là một hệ quản trị nội dung (CMS – Content Management System) mã nguồn mở rất phổ biến hiện nay. Trong quá trình thực hiện bài tập triển khai WordPress bằng Docker trên Ubuntu, em nhận thấy WordPress có nhiều ưu điểm nổi bật nhưng cũng tồn tại một số hạn chế nhất định.
+### 1. Về mức độ dễ sử dụng
+- WordPress có giao diện quản trị trực quan, dễ thao tác và thân thiện với người dùng. Sau khi cài đặt xong, người dùng có thể tạo website mà gần như không cần phải lập trình nhiều. Các chức năng như tạo bài viết, thêm hình ảnh, video, chỉnh sửa giao diện hay tạo menu đều được thực hiện thông qua giao diện web đơn giản.
+- Ngoài ra, WordPress có kho plugin và theme rất phong phú. Người dùng có thể dễ dàng cài đặt thêm các chức năng như:
+  + Tạo form liên hệ.
+  + Tạo slideshow.
+  + Tối ưu SEO.
+  + Tạo giao diện đẹp.
+  + Bảo mật website.
+  + Tích hợp mạng xã hội,…
+- Chỉ với vài thao tác cài plugin là website đã có thêm nhiều chức năng mới mà không cần viết code từ đầu.
+- Tuy nhiên, đối với người mới bắt đầu thì việc cấu hình Docker, MariaDB, phpMyAdmin và Cloudflare Tunnel ban đầu có thể hơi khó vì phải làm việc với Linux terminal và các lệnh Docker. Sau khi hệ thống chạy ổn định thì việc quản trị WordPress lại khá dễ dàng.
+
+### 2. Về công sức triển khai
+- Nếu cài WordPress theo cách thông thường thì phải cài riêng:
+  + Apache/Nginx.
+  + PHP.
+  + MySQL/MariaDB,.
+  + phpMyAdmin.
+- Quá trình này tương đối mất thời gian và dễ xảy ra lỗi cấu hình.
+- Tuy nhiên, khi sử dụng Docker Compose thì việc triển khai trở nên nhanh hơn rất nhiều. Chỉ cần viết file docker-compose.yml là có thể khởi tạo toàn bộ hệ thống bằng một lệnh:
+```docker-compose up -d```
+- Docker giúp:
+  + Quản lý service dễ hơn.
+  + Dễ backup.
+  + Dễ di chuyển sang máy khác.
+  + Hạn chế lỗi xung đột môi trường.
+- Trong quá trình thực hiện, phần tốn nhiều công sức nhất là:
+  + Xử lý lỗi container.
+  + Xử lý xung đột port.
+  + Cấu hình Cloudflare Tunnel.
+  + Chỉnh sửa giao diện website.
+- Nhìn chung, việc triển khai bằng Docker giúp giảm đáng kể thời gian cài đặt so với cách thủ công.
+
+### 3. Về hiệu năng và tài nguyên hệ thống
+- WordPress không quá nặng nếu chỉ dùng các chức năng cơ bản. Tuy nhiên, khi chạy cùng:
+  + MariaDB
+  + phpMyAdmin
+  + Docker Engine
+
+-> thì hệ thống sẽ tiêu tốn một lượng RAM và CPU nhất định.
+
+- Trong quá trình chạy thực tế:
+  + MariaDB sử dụng khoảng vài trăm MB RAM.
+  + WordPress container sử dụng khoảng 200–400MB RAM.
+  + phpMyAdmin khá nhẹ.
+  + Docker Engine cũng sử dụng thêm tài nguyên hệ thống.
+- Nếu cài thêm nhiều plugin hoặc theme nặng thì RAM và CPU sẽ tăng lên đáng kể. Máy cấu hình thấp có thể bị chậm khi:
+  + Cài plugin.
+  + Upload media.
+  + Chỉnh sửa giao diện.
+  + Chạy nhiều container cùng lúc.
+- Đối với máy ảo Ubuntu, nên cấp:
+  + Tối thiểu 2GB RAM.
+  + 2 CPU cores
+
+-> để hệ thống hoạt động ổn định.
+
+### 4. Về ưu điểm của WordPress
+- Một số ưu điểm nổi bật:
+  + Miễn phí và mã nguồn mở.
+  + Cộng đồng sử dụng rất lớn.
+  + Có nhiều tài liệu hướng dẫn.
+  + Dễ tạo website nhanh chóng.
+  + Hỗ trợ nhiều plugin và theme.
+  + Có thể tạo blog, website cá nhân, bán hàng, tin tức, học tập,...
+  + Dễ quản trị nội dung.
+  + Có thể triển khai bằng Docker rất thuận tiện.
+- Ngoài ra, việc sử dụng Cloudflare Tunnel giúp public website lên Internet dễ dàng mà không cần:
+  + Mở port modem.
+  + Mua VPS.
+  + Cấu hình NAT phức tạp.
+
+### 5. Về nhược điểm của WordPress
+- Bên cạnh ưu điểm, WordPress cũng có một số hạn chế:
+  + Dễ bị lỗi nếu plugin xung đột nhau.
+  + Nếu cài quá nhiều plugin sẽ làm website chậm.
+  + Cần cập nhật thường xuyên để tránh lỗ hổng bảo mật.
+  + Một số theme và plugin đẹp yêu cầu trả phí.
+  + Tốn RAM hơn website tĩnh HTML đơn giản.
+  + Khi dùng Docker cần hiểu cơ bản về Linux và container.
+- Ngoài ra, nếu website có lượng truy cập lớn thì cần:
+  + Tối ưu database
+  + Cache
+  + CDN
+  + Hosting mạnh hơn.
+
+### 6. Đánh giá tổng quan
+- Qua bài thực hành, em nhận thấy WordPress là một giải pháp rất phù hợp để xây dựng website nhanh chóng, đặc biệt với người không chuyên lập trình web. Việc kết hợp WordPress với Docker giúp quá trình triển khai hiện đại, dễ quản lý và thuận tiện hơn rất nhiều.
+- Mặc dù vẫn có một số khó khăn trong quá trình cấu hình ban đầu, nhưng nhìn chung WordPress là nền tảng mạnh mẽ, dễ sử dụng và phù hợp cho nhiều mục đích khác nhau như:
+  + Website cá nhân.
+  + Blog.
+  + Website trường học.
+  + Bán hàng.
+  + Giới thiệu doanh nghiệp.
+- Đây là một công cụ rất hữu ích trong học tập cũng như triển khai website thực tế.
