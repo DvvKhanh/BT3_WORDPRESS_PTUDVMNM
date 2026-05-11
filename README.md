@@ -211,7 +211,7 @@ volumes:
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/7639c85d-9408-4ec4-8699-ed8e421d7c62" />
 
 ### Tạo Tunel
-- Chạy lệnh: ```cloudflared tunnel create pawnshop```
+- Chạy lệnh: ```cloudflared tunnel create wordpress```
 - Kết quả hiển thị
 <img width="1476" height="173" alt="image" src="https://github.com/user-attachments/assets/e5ec2587-93b3-4dbb-a493-7ce5b38a8efe" />
 
