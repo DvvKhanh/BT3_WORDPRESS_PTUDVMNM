@@ -162,7 +162,7 @@ volumes:
 👉 Tạo bài viết 2 — Giới thiệu ngành học
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8486114e-8fa6-4123-a3c4-fe258fb78067" />
 
-- Kết quả: http://192.168.91.154:8082/?p=12
+- Kết quả: http:http://192.168.91.154:8082/?p=13
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/749994ab-f8df-4d92-9c2d-6070d49b5963" />
 
 - Sửa giao diện
