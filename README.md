@@ -192,47 +192,37 @@ volumes:
 - Kiểm tra Database wordpressdb
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/e4be7339-bf4d-4387-a207-9dda883b6464" />
 
-## 8. Cài đặt Cloudflare
-- Thêm respository
-```
-curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloudflare-main.gpg
-echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflare-main noble main' | sudo tee /etc/apt/sources.list.d/cloudflare-main.list
-```
-<img width="1472" height="102" alt="image" src="https://github.com/user-attachments/assets/27ddc49c-8bc0-44b6-8e15-00f9cfad34c2" />
+## 8. Public bằng Cloudflare Tunnel
+### Cài Cloudflare trên Ubuntu
+- Download về: ```wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb```
+<img width="1470" height="755" alt="image" src="https://github.com/user-attachments/assets/61cce9d7-9823-48d1-92b6-c215d5344b25" />
 
-- Cài Cloudflare
-```
-sudo apt update
-sudo apt install cloudflared -y
-```
-<img width="1472" height="635" alt="image" src="https://github.com/user-attachments/assets/069d513c-2feb-496b-9ece-7bcdd077b143" />
-
+- Cài: ```sudo dpkg -i cloudflared-linux-amd64.deb```
 - Kiểm tra: ```cloudflared --version```
-<img width="712" height="82" alt="image" src="https://github.com/user-attachments/assets/ffcba35b-c310-47b7-b38c-d44fd9dc58bc" />
+<img width="931" height="242" alt="image" src="https://github.com/user-attachments/assets/782a3b04-6e00-4102-a74d-2deaafa393d4" />
 
-## 9. Đăng nhập Cloudflare
-- Chạy lệnh: ```cloudflared tunnel login```
+### Đăng nhập Cloudflare
+- Chạy: ```cloudflared tunnel login```
 - Ubuntu hiện link: https://dash.cloudflare.com/argotunnel?aud=&callback=https%3A%2F%2Flogin.cloudflareaccess.org%2FZqlA8KB8WO_UVqOi8H7vXaZRhgoQO5uusbxzSIkdIn8%3D
 - Copy link và mở trình duyệt chạy.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/d06a8c73-3cd7-4e4f-b758-e02f23dcba38" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/0c1d785e-ad1e-4e79-ab0b-8fded807c84c" />
 
 - Cloudflare sẽ hỏi: Authorize Cloudflared -> chọn domain -> nhấn Authorize
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/0dbfc86d-7759-4c67-a16f-e15c86c7ddcd" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/7639c85d-9408-4ec4-8699-ed8e421d7c62" />
 
-## 10. Tạo Cloudflare
-- Chạy lệnh: ```cloudflared tunnel create wordpress-tunnel```
-<img width="1477" height="175" alt="image" src="https://github.com/user-attachments/assets/56011794-98e4-4d94-b5ef-e767c8111c2c" />
+### Tạo Tunel
+- Chạy lệnh: ```cloudflared tunnel create pawnshop```
+- Kết quả hiển thị
+<img width="1476" height="173" alt="image" src="https://github.com/user-attachments/assets/e5ec2587-93b3-4dbb-a493-7ce5b38a8efe" />
 
-- Kiểm tra Tunnel: ```cloudflared tunnel list```
-<img width="1220" height="173" alt="image" src="https://github.com/user-attachments/assets/8c335bf2-e029-4e65-97a0-7f34a1731315" />
-
-## 11. Tạo file config
-- Chạy lệnh: ```nano ~/.cloudflared/config.yml```
+### Tạo file config
+- Tạo file: ```mkdir -p ~/.cloudflared```
+- Chạy lệnh: ```nano ~/.cloudflared/config-bai3.yml```
 - Nội dung file:
 ```
-tunnel: 2d42d3bb-3030-4ef2-ab57-bbf37e86a863
+tunnel: 2f70c1f5-d203-4b62-b635-de2fc5fa4561
 
-credentials-file: /home/khanh/.cloudflared/2d42d3bb-3030-4ef2-ab57-bbf37e86a863.json
+credentials-file: /home/khanh/.cloudflared/2f70c1f5-d203-4b62-b635-de2fc5fa4561.json
 
 ingress:
   - hostname: wordpress.khanh123.id.vn
@@ -240,14 +230,15 @@ ingress:
 
   - service: http_status:404
 ```
+- Kiểm tra file: ```cat ~/.cloudflared/config-bai3.yml```
+<img width="1065" height="266" alt="image" src="https://github.com/user-attachments/assets/471c9014-84fd-4c44-9d96-5f391632a45c" />
 
-- Tao DNS cho Tunnel
-  + Chạy lệnh: ```cloudflared tunnel route dns wordpress-tunnel wordpress.khanh123.id.vn```
-<img width="1473" height="102" alt="image" src="https://github.com/user-attachments/assets/b9fd924b-8706-4084-84b8-b90c3c46affe" />
+### Tạo DNS
+- Chạy lệnh: ```cloudflared tunnel route dns wordpress wordpress.khanh123.id.vn```
+<img width="1472" height="101" alt="image" src="https://github.com/user-attachments/assets/df18d367-532e-4882-bd6b-358b5178f848" />
 
-- Chạy Tunnel: ```cloudflared tunnel run wordpress-tunnel```
-<img width="1477" height="672" alt="image" src="https://github.com/user-attachments/assets/84f2e324-0b95-44f4-b857-9551b64aa314" />
+- Kiểm tra DNS trên Cloudflare
+<img width="1536" height="960" alt="e" src="https://github.com/user-attachments/assets/8911f7c4-57cf-49ec-9590-37b15f35d3d1" />
 
-- Lưu ý:
-  + Không được tắt Terminal.
-  + Nếu tắt -> Web sẽ off.
+### Chạy Tunnel
+- Chạy tunnel: cloudflared tunnel --config ~/.cloudflared/config-bai3.yml run wordpress
