@@ -170,10 +170,10 @@ volumes:
 <img width="1920" height="1200" alt="d" src="https://github.com/user-attachments/assets/1c59d38d-084b-4f0c-8674-34119322ca63" />
 
 - Chỉnh sửa giao diện
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b7015ff7-81d5-4535-a74d-60b5811a63e4" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c3084146-b7f1-4ac9-946c-d5adee1c3b02" />
 
 - Kết quả sau khi chỉnh sửa: http://192.168.91.154:8082
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/2b6c3745-e072-43d7-9284-6052dc386432" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ac4b2459-2d0f-49e8-b1c4-baccc0615032" />
 
 ## 7. Kiểm tra PHPAdmin
 - Mở trình duyệt, truy cập: http://192.168.91.154:8081/
