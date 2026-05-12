@@ -233,7 +233,7 @@ ingress:
   - service: http_status:404
 ```
 - Kiểm tra file: ```cat ~/.cloudflared/config-bai3.yml```
-<img width="1065" height="266" alt="image" src="https://github.com/user-attachments/assets/471c9014-84fd-4c44-9d96-5f391632a45c" />
+<img width="1037" height="257" alt="image" src="https://github.com/user-attachments/assets/17057aab-a1b2-45d7-b2fb-5df6d963129f" />
 
 ### Tạo DNS
 - Chạy lệnh: ```cloudflared tunnel route dns wordpress wordpress.khanh123.id.vn```
@@ -246,17 +246,18 @@ ingress:
 - Chạy tunnel: ```cloudflared tunnel --config ~/.cloudflared/config-bai3.yml run wordpress```
 <img width="1476" height="755" alt="image" src="https://github.com/user-attachments/assets/828edf26-353d-4df2-8a7f-41275bceae52" />
 
-- Lưu ý:
-+ Không được tắt Terminal.
-+ Nếu tắt -> Web sẽ off
-
  ## 9. Truy cập website
  - Truy cập: https://wordpress.khanh123.id.vn
  - Bài viết giới thiệu bản thân
-<img width="1918" height="1148" alt="image" src="https://github.com/user-attachments/assets/b1a9e5cb-76d5-4d9a-a0c0-95690705a8f4" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/77dce527-6feb-4b21-aaed-23d8db800e95" />
 
  - Bài viết giới thiệu ngành học yêu thích
-<img width="1918" height="1151" alt="image" src="https://github.com/user-attachments/assets/aa14f90e-4bb5-4d69-996c-23ee1aef3edc" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/985aabd2-a58f-4263-b170-c7805e5871a0" />
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/791450a5-5657-4336-8fab-8977d212f75f" />
+
+- Video giới thiệu ngành
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/72526d98-909c-4980-963b-6857f98ab7f2" />
 
  ## 10. Nhận xét
  WordPress là một hệ quản trị nội dung (CMS – Content Management System) mã nguồn mở rất phổ biến hiện nay. Trong quá trình thực hiện bài tập triển khai WordPress bằng Docker trên Ubuntu, em nhận thấy WordPress có nhiều ưu điểm nổi bật nhưng cũng tồn tại một số hạn chế nhất định.
