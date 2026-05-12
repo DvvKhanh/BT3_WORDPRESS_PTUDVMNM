@@ -210,6 +210,8 @@ volumes:
 - Cloudflare sẽ hỏi: Authorize Cloudflared -> chọn domain -> nhấn Authorize
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/7639c85d-9408-4ec4-8699-ed8e421d7c62" />
 
+<img width="1480" height="312" alt="image" src="https://github.com/user-attachments/assets/02bce41c-6040-4ac4-8bb9-b8fc264aece9" />
+
 ### Tạo Tunel
 - Chạy lệnh: ```cloudflared tunnel create wordpress```
 - Kết quả hiển thị
@@ -220,9 +222,9 @@ volumes:
 - Chạy lệnh: ```nano ~/.cloudflared/config-bai3.yml```
 - Nội dung file:
 ```
-tunnel: 2f70c1f5-d203-4b62-b635-de2fc5fa4561
+tunnel: d73954b9-b9bd-4e09-8de7-a3b70402a1ff
 
-credentials-file: /home/khanh/.cloudflared/2f70c1f5-d203-4b62-b635-de2fc5fa4561.json
+credentials-file: /home/khanh/.cloudflared/d73954b9-b9bd-4e09-8de7-a3b70402a1ff.json
 
 ingress:
   - hostname: wordpress.khanh123.id.vn
